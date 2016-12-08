@@ -1,0 +1,19 @@
+extends layout
+block title
+  title (5) Tower of Hanoi
+block content
+  .container
+    h1 Tower of Hanoi
+    .game#game
+      .rod#rod-0
+      .rod#rod-1
+      .rod#rod-2
+      .stats
+        .moves Moves: #[span#moves 0]
+        .time Time: #[span#timer 00:00]
+        #options Options
+
+    .options
+      ul.moves
+        - for (let i = 2; i <= 10; i++)
+          li(id='disks-' + i)= i + ' disks'
